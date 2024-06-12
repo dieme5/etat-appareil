@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isAuth = false;
 
-  lastUpdate = new Date();
+  lastUpdate!: Promise<Date>;
 
   appareils = [
     {
@@ -29,6 +29,13 @@ export class AppComponent {
     setTimeout(() => {
       this.isAuth = true;
     }, 4000);
+
+    this.lastUpdate = new Promise<Date>((resolve, reject) => {
+      const date = new Date();
+      setTimeout(() => {
+        resolve(date);
+      }, 2000);
+    });
   }
 
   onAllumer() {
