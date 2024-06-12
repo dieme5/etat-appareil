@@ -32,5 +32,13 @@ export class AppareilService {
     }
   }
 
+  switchOnOne(index: number) {
+    this.appareils[index].status = 'allumé';
+  }
+
+  switchOffOne(index: number) {
+    this.appareils[index].status = 'éteint';
+  }
+
   constructor() { }
 }
