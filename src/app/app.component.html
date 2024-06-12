@@ -8,8 +8,11 @@
       <ul class="list-group">
         <app-appareil *ngFor="let appareil of appareils" [appareilName]="appareil.name" [appareilStatus]="appareil.status"></app-appareil>
       </ul>
-      <button class="btn btn-success mt-4" [disabled]="!isAuth" (click)="onAllumer()">
+      <button class="btn btn-success mt-4 me-4" (click)="onAllumer()">
         Tout allumer
+      </button>
+      <button class="btn btn-danger mt-4" [disabled]="!isAuth" (click)="onEteindre()">
+        Tout éteindre
       </button>
     </div>
   </div>
